@@ -4,6 +4,7 @@ exports.run = (client, message, args) => {
 const moment = require('moment');
 moment.locale('pt-BR')
 let member = message.mentions.users.first()
+if(!member) member = message.author;
 
 const err = new Discord.RichEmbed()
 .setAuthor("Erro de digitação!")
