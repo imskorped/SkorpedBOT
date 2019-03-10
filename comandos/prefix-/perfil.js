@@ -14,7 +14,7 @@ const err = new Discord.RichEmbed()
 if(!member)
 return message.reply(err);
     
-let cargos = message.mentions.members.first().roles.map(a => a).join(", ").replace('@everyone, ', "")
+let cargos = member.roles.map(a => a).join(", ").replace('@everyone, ', "")
 
 database.Members.findOne({
     "_id": member.id
