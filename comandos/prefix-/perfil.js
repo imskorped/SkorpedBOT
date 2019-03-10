@@ -14,7 +14,6 @@ const err = new Discord.RichEmbed()
 if(!member)
 return message.reply(err);
     
-let cargos = member.roles.map(a => a).join(", ").replace('@everyone, ', "")
 
 database.Members.findOne({
     "_id": member.id
@@ -37,7 +36,6 @@ const embed = new Discord.RichEmbed()
 .addField("💸 Dinheiro", `${documento.coins}`, true)
 .addField("❣️ Reputação", `${documento.rep}`, true)
 .addField("⚠️ Advertências", `${documento.warn}`, true)
-.addField("📃 Cargos", cargos)
 .addField("📜 Conta criada em", moment(member.createdAt).format('LLLL'))
 .addField("📖 Sobre", "```" + `${documento.sobre}` + "```")
 .setThumbnail(member.displayAvatarURL)
