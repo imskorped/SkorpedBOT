@@ -41,7 +41,7 @@ const embed = new Discord.RichEmbed()
 .addField("📜 Conta criada em", moment(member.createdAt).format('LLLL'))
 .addField("📖 Sobre", "```" + `${documento.sobre}` + "```")
 .setThumbnail(member.displayAvatarURL)
-.setFooter("EclipseBOT • Informações de usuario", message.mentions.users.first().displayAvatarURL)
+.setFooter("EclipseBOT • Informações de usuario", member.displayAvatarURL)
 message.channel.send(embed)
 
         } else {
