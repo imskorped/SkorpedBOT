@@ -52,7 +52,7 @@ client.on('guildMemberAdd', member => {
   let embed = new Discord.RichEmbed()
 .setDescription("Clique no emoji abaixo para poder desbloquear todas as funções do servidor!")
 .setColor('#FF0000')
-.setAuthor("EclipseBOT • Verificação")
+.setFooter("🔒 EclipseBOT • Verificação")
 .setTimestamp();
 
 client.guilds.get("530618032037298186").members.get(user.id).addRole('536970267985969153')
