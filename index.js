@@ -47,6 +47,24 @@ client.login("NTUzMzU2ODEyMzIyMzQwODY0.D2M5cw.5fySKKtRNO68ODfALS76Wv_Olks")
 
 //Captcha
 
+
+
+client.on('guildMemberAdd', member => {
+    var x = member.guild.channels.get("545410589313466379");
+    if(!x) return;
+    const embed = new Discord.RichEmbed()
+    .setColor("BLUE")
+    .setThumbnail(member.user.avatarURL)
+    .setFooter("Confira nossos produtos em: eclipseminecraft.com")
+    .setDescription(`<@${member.user.id}> \n \n Seja bem vindo!\nLeia as <#536970287934078999> para não ser punido.`)
+	x.send(embed)
+    let grupo = member.guild.roles.find("name", "💥 Não Registrado");
+    member.addRole(grupo)
+        
+});
+
+
+
 client.on('guildMemberAdd', member => { 
     
   let embed = new Discord.RichEmbed()
@@ -54,8 +72,6 @@ client.on('guildMemberAdd', member => {
 .setColor('#FF0000')
 .setFooter("🔒 EclipseBOT • Verificação")
 .setTimestamp();
-
-client.guilds.get("530618032037298186").members.get(member.id).addRole('536970267985969153')
 	
 member.guild.channels.get('536970280099250198').send(`** ** ` + `<@` + member.user.id  + `>`);
 
