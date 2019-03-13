@@ -49,7 +49,7 @@ client.login("NTUzMzU2ODEyMzIyMzQwODY0.D2M5cw.5fySKKtRNO68ODfALS76Wv_Olks")
 
 client.on("message", (message) => {
 
-console.log(`${message.author}: ${message.content}`);
+console.log(`${message.author.username}: ${message.content} | #${message.channel.name}`);
 
 });
 
