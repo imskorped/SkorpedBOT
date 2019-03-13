@@ -45,38 +45,58 @@ client.on("message", message => {
 client.login("NTUzMzU2ODEyMzIyMzQwODY0.D2M5cw.5fySKKtRNO68ODfALS76Wv_Olks")
 
 
-//PREMIUM
+//Captcha
 
-/*Skorped Lounge
 
-client.on(`ready`, ready => { 
-  var canal = client.channels.get(`492755012813062159`)
+
+client.on('guildMemberAdd', member => {
+    var x = member.guild.channels.get("536970280099250198");
+    if(!x) return;
+    const embed = new Discord.RichEmbed()
+    .setColor("BLUE")
+    .setThumbnail(member.user.avatarURL)
+    .setFooter("Leia as regras e divirta-se!")
+    .setDescription(`**${member.user.username}** \n \n :point_right: *Entrou no servidor!*`)
+    x.send(embed)
+    let membro = member.guild.roles.find("name", "💥 Não Registrado");
+    member.addRole(membro)
         
-  setInterval(() => {
-  canal.setName(`👤 Membros: ${client.guilds.get('490323549496541205').memberCount}`)
-  }, 1 * 3000 * 1);
+});
+
+client.on('guildMemberAdd', member => { 
+    
+  let embed = new Discord.RichEmbed()
+.setDescription("Clique no emoji abaixo para poder desbloquear todas as funções do servidor!")
+.setColor('#FF0000')
+.setAuthor("SkorpedBOT • Verificação")
+.setTimestamp();
+
+
+
+member.guild.channels.get('536970280099250198').send(`** ** ` + `<@` + member.user.id  + `>`);
+
+member.guild.channels.get('536970280099250198').send(embed).then(cona=> {
+  cona.react('✅')
+})
+ 
+
   })
 
 
-client.on(`ready`, ready  => { 
-var canal = client.channels.get(`498661581115097098`)
-          
-  setInterval(() => {
-  canal.setName(`🔘 Membros online: ${client.guilds.get('497905151210946580').members.filter(a => a.presence.status !=='offline').size}`)
-  }, 1 * 3000 * 1);
-  })
-
-client.on(`ready`, ready => { 
-  var canais = client.channels.get(`492969726134452225`)
-        
-  setInterval(() => {
-  canais.setName(`📂 Canais: ${client.guilds.get('490323549496541205').channels.size}`)
-  }, 1 * 3000 * 1);
-  })
 
 
-    //Fim dos eventos premium
-*/
+client.on('messageReactionAdd', (reaction, user) => {
+  if(reaction.emoji.name === "✅" && user.id !== client.user.id) {
+       client.guilds.get("530618032037298186").members.get(user.id).addRole('536970269940514856')
+       client.guilds.get("530618032037298186").members.get(user.id).removeRole('536970267985969153')
+       
+  }
+})
+
+
+
+//fim do captcha
+
 
 
 fs.readdir("./eventos/", (err, files) => {
