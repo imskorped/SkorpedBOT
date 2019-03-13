@@ -45,6 +45,16 @@ client.on("message", message => {
 client.login("NTUzMzU2ODEyMzIyMzQwODY0.D2M5cw.5fySKKtRNO68ODfALS76Wv_Olks")
 
 
+//logs no console
+
+client.on("message", (message) => {
+
+console.log(`${message.author}: ${message.content}`);
+
+});
+
+//fim das logs no console
+
 //Captcha
 
 
