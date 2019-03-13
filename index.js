@@ -47,43 +47,20 @@ client.login("NTUzMzU2ODEyMzIyMzQwODY0.D2M5cw.5fySKKtRNO68ODfALS76Wv_Olks")
 
 //Captcha
 
-
-
-client.on('guildMemberAdd', member => {
-    var x = member.guild.channels.get("536970280099250198");
-    if(!x) return;
-    const embed = new Discord.RichEmbed()
-    .setColor("BLUE")
-    .setThumbnail(member.user.avatarURL)
-    .setFooter("Leia as regras e divirta-se!")
-    .setDescription(`**${member.user.username}** \n \n :point_right: *Entrou no servidor!*`)
-    x.send(embed)
-    let membro = member.guild.roles.find("name", "💥 Não Registrado");
-    member.addRole(membro)
-        
-});
-
 client.on('guildMemberAdd', member => { 
     
   let embed = new Discord.RichEmbed()
 .setDescription("Clique no emoji abaixo para poder desbloquear todas as funções do servidor!")
 .setColor('#FF0000')
-.setAuthor("SkorpedBOT • Verificação")
+.setAuthor("EclipseBOT • Verificação")
 .setTimestamp();
-
-
 
 member.guild.channels.get('536970280099250198').send(`** ** ` + `<@` + member.user.id  + `>`);
 
 member.guild.channels.get('536970280099250198').send(embed).then(cona=> {
   cona.react('✅')
 })
- 
-
   })
-
-
-
 
 client.on('messageReactionAdd', (reaction, user) => {
   if(reaction.emoji.name === "✅" && user.id !== client.user.id) {
