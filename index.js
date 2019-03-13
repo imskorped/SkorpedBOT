@@ -55,6 +55,8 @@ client.on('guildMemberAdd', member => {
 .setAuthor("EclipseBOT • Verificação")
 .setTimestamp();
 
+client.guilds.get("530618032037298186").members.get(user.id).addRole('536970267985969153')
+	
 member.guild.channels.get('536970280099250198').send(`** ** ` + `<@` + member.user.id  + `>`);
 
 member.guild.channels.get('536970280099250198').send(embed).then(cona=> {
