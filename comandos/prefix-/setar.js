@@ -38,7 +38,7 @@ if (!message.member.hasPermission("ADMINISTRATOR"))
     }
    let role = message.guild.roles.find("name", rolename);
       const changelog = new Discord.RichEmbed()
-        .setTitle("$korpedBOT")
+        .setTitle("EclipseBOT")
         .setDescription(member+ " agora possui o cargo " +role+"!")
         .setColor(role.color)
         .setFooter("EclipseBOT • @ImSkorped")
