@@ -92,12 +92,14 @@ member.guild.channels.get('536970280099250198').send(embed).then(cona=> {
 
 client.on('messageReactionAdd', (reaction, user) => {
   if(reaction.emoji.name === "✅" && user.id !== client.user.id) {
-	embed.delete
        client.guilds.get("530618032037298186").members.get(user.id).addRole('536970269940514856')
        client.guilds.get("530618032037298186").members.get(user.id).removeRole('536970267985969153')
        
   }
-})
+	{
+	message.delete
+	}
+	})
 
 
 
