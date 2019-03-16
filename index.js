@@ -96,9 +96,6 @@ client.on('messageReactionAdd', (reaction, user) => {
        client.guilds.get("530618032037298186").members.get(user.id).removeRole('536970267985969153')
        
   }
-	{
-	message.delete
-	}
 	})
 
 
